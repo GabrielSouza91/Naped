@@ -1,0 +1,70 @@
+@use "sass:math";
+
+// =============================================
+// LAYOUT & GRID SYSTEM (VARIABLES)
+// =============================================
+
+// 1. Breakpoints
+$breakpoint-mobile: 320px !default;
+$breakpoint-tablet: 768px !default; // Assuming standard tablet size (adjust if needed)
+$breakpoint-desktop: 1024px !default;
+$breakpoint-hd: 1366px !default;
+
+// 2. Desktop HD (1366px)
+$grid-hd-columns: 12 !default;
+$grid-hd-gutter: 30px !default;
+$grid-hd-column-width: 50px !default;
+$grid-hd-type: center !default;
+$grid-hd-max-width: 1366px !default;
+
+// 3. Desktop (1024px - same as HD in your spec)
+$grid-desktop-columns: 12 !default;
+$grid-desktop-gutter: 30px !default;
+$grid-desktop-column-width: 50px !default;
+$grid-desktop-type: center !default;
+$grid-desktop-max-width: 1024px !default;
+
+// 4. Tablet (Assumed - customize as needed)
+$grid-tablet-columns: 8 !default; // Common tablet grid
+$grid-tablet-gutter: 24px !default;
+$grid-tablet-column-width: 80px !default;
+$grid-tablet-type: center !default;
+
+// 5. Mobile (320px)
+$grid-mobile-columns: 2 !default;
+$grid-mobile-gutter: 30px !default;
+$grid-mobile-column-width: 130px !default;
+$grid-mobile-type: center !default;
+
+// 6. Grid Container Mixin
+@mixin grid-container($type: center) {
+  width: 100%;
+  margin: 0 auto;
+  @if $type == center {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// 7. Grid Column Calculator
+@function grid-column-width($columns, $col-width, $gutter) {
+  @return ($col-width * $columns) + ($gutter * ($columns - 1));
+}
+
+// 8. Responsive Grid Implementation
+.container {
+  @include grid-container($grid-desktop-type);
+	min-height: 80vh;
+
+  // Desktop/HD
+  @media (min-width: $breakpoint-desktop) {
+    max-width: grid-column-width($grid-desktop-columns, $grid-desktop-column-width, $grid-desktop-gutter);
+		padding: 0 math.div($grid-desktop-gutter, 2);
+  }
+
+  // Mobile
+  @media (max-width: $breakpoint-tablet - 1) {
+    max-width: grid-column-width($grid-mobile-columns, $grid-mobile-column-width, $grid-mobile-gutter);
+		padding: 0 math.div($grid-mobile-gutter, 2);
+  }
+}

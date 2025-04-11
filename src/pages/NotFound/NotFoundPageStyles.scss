@@ -1,0 +1,82 @@
+@use "../../theme/layout-grid" as var;
+
+.container_not_found {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 48px;
+
+  @media screen and (max-width: var.$breakpoint-tablet) {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .text_content {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 12px;
+
+    h2 {
+      font-weight: 400;
+      font-size: 46px;
+      line-height: 140%;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 160%;
+      color: $dark-20;
+    }
+
+    @media screen and (max-width: var.$breakpoint-tablet) {
+      gap: 10px;
+      width: 60%;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 140%;
+      }
+    }
+  }
+
+  .image_content {
+    width: 500px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      width: 400px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-weight: 400;
+      size: 24px;
+      line-height: 160%;
+    }
+
+    @media screen and (max-width: var.$breakpoint-tablet) {
+      width: 400px;
+
+      img {
+        width: 300px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 140%;
+      }
+    }
+  }
+}

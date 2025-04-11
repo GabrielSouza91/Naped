@@ -1,0 +1,22 @@
+@use "@theme/theme" as *;
+@use "../../theme/layout-grid" as var;
+
+button {
+  padding: 14px 32px;
+  background: $brand-color-blue-gradiant;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: 0.3s;
+
+  @media screen and (max-width: var.$breakpoint-tablet) {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

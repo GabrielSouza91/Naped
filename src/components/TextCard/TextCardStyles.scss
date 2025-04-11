@@ -1,0 +1,40 @@
+@use "@theme/theme";
+
+.card_text_content {
+  padding: 12px;
+  display: flex;
+	width: 100%;
+  flex-direction: column;
+  flex: 1;
+
+  & h2 {
+    font-weight: 400;
+    text-align: start;
+    margin-top: 6px;
+  }
+
+	span {
+    background: $brand-color-blue-gradiant;
+    padding: 4px 16px;
+    border-radius: 4px;
+    font-size: 18px;
+    line-height: 140%;
+    width: fit-content;
+    margin-bottom: 0.5rem;
+  }
+  & p {
+    margin-top: 6px;
+    margin-bottom: 21px;
+    font-size: 1.1rem;
+    color: $dark-20;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  & a {
+    margin-top: auto;
+  }
+}

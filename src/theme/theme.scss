@@ -1,0 +1,33 @@
+@use "./variables" as *;
+@use "sass:meta";
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@400;500&display=swap");
+
+// Carregue os módulos na ordem correta
+@include meta.load-css("./variables");
+@include meta.load-css("./spacing");
+@include meta.load-css("./typography");
+@include meta.load-css("./layout-grid");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Archivo", sans-serif;
+}
+
+body {
+  background-color: $bg;
+  color: $white;
+
+	& a {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+.span_gradiant {
+  background: $brand-color-blue-gradiant;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

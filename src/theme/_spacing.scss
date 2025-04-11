@@ -1,0 +1,36 @@
+// =============================================
+// SISTEMA DE ESPAÇAMENTOS (SPACING SCALE)
+// =============================================
+
+// Espaçamentos base (8px = 0.5rem considerando root 16px)
+$spacing-1: 8px !default;    // Pequeno (XS)
+$spacing-2: 16px !default;   // Base (SM)
+$spacing-3: 24px !default;   // Médio (MD)
+$spacing-4: 32px !default;   // Regular
+$spacing-5: 40px !default;   // Grande (LG)
+$spacing-6: 48px !default;   // XL
+$spacing-7: 64px !default;   // XXL
+$spacing-8: 80px !default;   // 3XL
+$spacing-9: 96px !default;   // 4XL
+
+// Mapa para loops (opcional)
+$spacing-scale: (
+  '1': $spacing-1,
+  '2': $spacing-2,
+  '3': $spacing-3,
+  '4': $spacing-4,
+  '5': $spacing-5,
+  '6': $spacing-6,
+  '7': $spacing-7,
+  '8': $spacing-8,
+  '9': $spacing-9
+);
+
+// Classes utilitárias (opcional)
+@each $key, $value in $spacing-scale {
+  .p-#{$key} { padding: $value; }        // Padding
+  .m-#{$key} { margin: $value; }         // Margin
+  .mt-#{$key} { margin-top: $value; }    // Margin Top
+  .mb-#{$key} { margin-bottom: $value; } // Margin Bottom
+  // Adicione outras direções conforme necessário
+}

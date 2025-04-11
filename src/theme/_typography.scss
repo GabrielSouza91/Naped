@@ -1,0 +1,61 @@
+// =============================================
+// SISTEMA DE TIPOGRAFIA (VARIÁVEIS SASS)
+// =============================================
+
+// 1. Configurações Base
+$font-family-archivo: 'Archivo', sans-serif !default;
+
+// 2. Pesos de Fonte
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+
+// 3. Escala Tipográfica (em variáveis individuais)
+// Headings
+$heading-1-font-size: 48px !default;
+$heading-1-font-weight: $font-weight-medium !default;
+$heading-1-line-height: 110% !default;
+
+$heading-2-font-size: 40px !default;
+$heading-2-font-weight: $font-weight-medium !default;
+$heading-2-line-height: 110% !default;
+
+$heading-3-font-size: 24px !default;
+$heading-3-font-weight: $font-weight-medium !default;
+$heading-3-line-height: 120% !default;
+
+// Paragraphs
+$lead-paragraph-font-size: 24px !default;
+$lead-paragraph-font-weight: $font-weight-regular !default;
+$lead-paragraph-line-height: 170% !default;
+
+$body-large-font-size: 20px !default;
+$body-large-font-weight: $font-weight-regular !default;
+$body-large-line-height: 160% !default;
+
+$body-medium-font-size: 18px !default;
+$body-medium-font-weight: $font-weight-regular !default;
+$body-medium-line-height: 160% !default;
+
+$body-normal-font-size: 16px !default;
+$body-normal-font-weight: $font-weight-regular !default;
+$body-normal-line-height: 160% !default;
+
+// 4. Mixin de Aplicação
+@mixin typography($size, $weight, $line-height) {
+  font-family: $font-family-archivo;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  margin: 0;
+}
+
+// 5. Classes com Variáveis
+.heading-1 { @include typography($heading-1-font-size, $heading-1-font-weight, $heading-1-line-height); }
+.heading-2 { @include typography($heading-2-font-size, $heading-2-font-weight, $heading-2-line-height); }
+.heading-3 { @include typography($heading-3-font-size, $heading-3-font-weight, $heading-3-line-height); }
+
+.lead-paragraph { @include typography($lead-paragraph-font-size, $lead-paragraph-font-weight, $lead-paragraph-line-height); }
+
+.body-large { @include typography($body-large-font-size, $body-large-font-weight, $body-large-line-height); }
+.body-medium { @include typography($body-medium-font-size, $body-medium-font-weight, $body-medium-line-height); }
+.body-normal { @include typography($body-normal-font-size, $body-normal-font-weight, $body-normal-line-height); }

@@ -1,0 +1,63 @@
+@use "@theme/theme" as *;
+@use "../../theme/layout-grid" as var;
+
+.nav_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  height: 80px;
+  border-bottom: 1px solid $dark-100;
+
+  @media screen and (max-width: var.$breakpoint-tablet) {
+    flex-direction: column;
+    height: 110px;
+  }
+
+  & .content_links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.8rem;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: var.$breakpoint-tablet) {
+      gap: 1rem;
+    }
+
+    & a {
+      font-size: 18px;
+      transition: 0.3s;
+      &:hover {
+        color: $dark-20;
+      }
+
+      @media screen and (max-width: var.$breakpoint-tablet) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  & .content_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+
+    @media screen and (max-width: var.$breakpoint-tablet) {
+      gap: 0.8rem;
+      width: 100%;
+			justify-content: center;
+			margin-top: 2px;
+    }
+
+    & .span_gradiant {
+      font-size: 32px;
+
+      @media screen and (max-width: var.$breakpoint-tablet) {
+        font-size: 24px;
+      }
+    }
+  }
+}

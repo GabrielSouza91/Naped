@@ -1,0 +1,19 @@
+@use "@theme/theme";
+
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+	& .span_title {
+		font-size: 36px;
+		line-height: 140%;
+	}
+
+  & button {
+    width: 22rem;
+
+  }
+}
