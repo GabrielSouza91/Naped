@@ -1,7 +1,7 @@
 // src/store/store.ts
 import { configureStore } from "@reduxjs/toolkit";
 
-const testeReducer = (state = {}, action: any) => {
+const testeReducer = (state = {}) => {
   return state; // Must return the state
 };
 
